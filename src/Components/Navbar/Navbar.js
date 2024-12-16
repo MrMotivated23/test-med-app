@@ -6,9 +6,13 @@ import './Navbar.css';
 const Navbar = () => {
     const handleClick = () => setClick(!click);
     const [click, setClick] = useState(false);
+    const [username, setUsername] = useState("");
+    const [email,setEmail]=useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
+    
 
     const handleLogout = () => {
-        const [isLoggedIn, setIsLoggedIn] = useState(false);
         sessionStorage.removeItem("auth-token");
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("email");
@@ -28,6 +32,15 @@ const Navbar = () => {
         setEmail('');
         window.location.reload();
     }
+
+    useEffect(() => { 
+        const storedemail = sessionStorage.getItem("email");
+  
+        if (storedemail) {
+              setIsLoggedIn(true);
+              setUsername(storedemail);
+            }
+          }, []);
 
 return (
    
