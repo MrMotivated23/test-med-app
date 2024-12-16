@@ -84,7 +84,18 @@ return (
           <li className="link">
             <a href="#">Appointments</a>
           </li>
-          
+
+          {isLoggedIn?(
+          <>
+            <li className="link">
+              <button className="btn2" onClick={handleLogout}>
+                Logout
+              </button>
+            </li>
+            
+          </>
+           ):(
+          <>
           <li className="link">
             <a href="../Sign_Up/Sign_Up.html">
               <button className="btn1">Sign Up</button>
@@ -96,17 +107,8 @@ return (
               <button className="btn1">Login</button>
             </a>
           </li>
-
-          isLoggedIn?(
-          <>
-            <li className="link">
-              <button className="btn2" onClick={handleLogout}>
-                Logout
-              </button>
-            </li>
-            
           </>
-           )
+           )}
         </ul>
     </nav>
 </div>
