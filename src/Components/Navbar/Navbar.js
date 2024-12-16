@@ -8,6 +8,7 @@ const Navbar = () => {
     const [click, setClick] = useState(false);
 
     const handleLogout = () => {
+        const [isLoggedIn, setIsLoggedIn] = useState(false);
         sessionStorage.removeItem("auth-token");
         sessionStorage.removeItem("name");
         sessionStorage.removeItem("email");
@@ -72,7 +73,7 @@ return (
           </li>
           
           <li className="link">
-            <a href="../Sign_Up//Sign_Up.html">
+            <a href="../Sign_Up/Sign_Up.html">
               <button className="btn1">Sign Up</button>
             </a>
           </li>
@@ -82,7 +83,8 @@ return (
               <button className="btn1">Login</button>
             </a>
           </li>
-          {isLoggedIn?(
+
+          isLoggedIn?(
           <>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
@@ -91,8 +93,7 @@ return (
             </li>
             
           </>
-        ) : (
-          <>
+           )
         </ul>
     </nav>
 </div>
