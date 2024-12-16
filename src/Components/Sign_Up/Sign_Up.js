@@ -63,10 +63,22 @@ const Sign_Up = () => {
                     <form method="POST" onSubmit={register}>
                         <div className="form-group">
                             <label htmlFor="email">Email</label>
-                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" pattern="[a-z0-9._%+-]+@gmail.com$" placeholder="Enter your email" aria-describedby="helpId" />
                             {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                         </div>
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
+                        <div className="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required pattern="\d{10,}" title="Phone number must be at least 10 digits."/>
+                        </div>
+                        <div className="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required minlength="8" title="Password must be at least 8 characters"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required pattern="[A-Za-z\s]{1,50}" title="Name should only contain letters and spaces, and be up to 50 characters long."/>
+                        </div>
                     </form>
                 </div>
             </div>

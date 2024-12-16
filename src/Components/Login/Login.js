@@ -87,11 +87,16 @@ const Login = () => {
                   id="email" 
                   className="form-control" 
                   placeholder="Enter your email" 
-                  aria-describedby="helpId" 
+                  aria-describedby="helpId"
+                  pattern="[a-z0-9._%+-]+@gmail.com$"
                 />
               </div>
               {/* Input field for password */}
               // write logic code for password input box
+              <div className="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" minlength="8" placeholder="Enter your password" title="Password must be at least 8 characters"/>
+                        </div>
               <div className="btn-group">
                 {/* Login button */}
                 <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
