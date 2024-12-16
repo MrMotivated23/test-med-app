@@ -69,15 +69,15 @@ const Sign_Up = () => {
                         {/* Apply similar logic for other form elements like name, phone, and password to capture user information */}
                         <div className="form-group">
                             <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required pattern="\d{10,}" title="Phone number must be at least 10 digits."/>
+                            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required pattern="\d{10,}" title="Phone number must be at least 10 digits."/>
                         </div>
                         <div className="form-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required minlength="8" title="Password must be at least 8 characters"/>
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required minlength="8" title="Password must be at least 8 characters"/>
                         </div>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required pattern="[A-Za-z\s]{1,50}" title="Name should only contain letters and spaces, and be up to 50 characters long."/>
+                            <input value={name} onChange={(e) => setName(e.target.value)} type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required pattern="[A-Za-z\s]{1,50}" title="Name should only contain letters and spaces, and be up to 50 characters long."/>
                         </div>
                     </form>
                 </div>
